@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsHub Pro - Professional News Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content fade-in-scale">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div>
+                        <h1>NewsHub Pro</h1>
+                        <p class="subtitle">Your Gateway to Professional News Coverage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container fade-in-up">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search for news, topics, or keywords...">
+                </div>
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <div class="category-list" id="categoryList">
+                <div class="category-pill active" data-category="general">General</div>
+                <div class="category-pill" data-category="business">Business</div>
+                <div class="category-pill" data-category="technology">Technology</div>
+                <div class="category-pill" data-category="health">Health</div>
+                <div class="category-pill" data-category="science">Science</div>
+                <div class="category-pill" data-category="sports">Sports</div>
+                <div class="category-pill" data-category="entertainment">Entertainment</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <div class="container">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading latest news...</p>
+            </div>
+
+            <div class="section-header" id="sectionHeader" style="display: none;">
+                <h2 class="section-title" id="sectionTitle">Latest News</h2>
+                <p class="section-subtitle" id="sectionSubtitle">Stay updated with the most recent news stories</p>
+            </div>
+
+            <div class="news-grid" id="newsGrid"></div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
